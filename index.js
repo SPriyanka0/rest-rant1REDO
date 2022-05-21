@@ -8,7 +8,7 @@
 
 // 4. Open my terminal and navigate to the project folder
 
-// 5. Run the command “npm init -y”
+// 5. Run the command “npm init -y” = package.json
 
 // 6. Run the command “npm install express”
 
@@ -29,6 +29,8 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
+//import router created in places.js
+app.use('/places', require('./controllers/places'))
 app.get('/', (req, res) => {
     res.send('Hello world!')
 })
@@ -38,3 +40,4 @@ app.get('*', (req, res) => {
 })
 
 app.listen(process.env.PORT)
+
