@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/SPriyanka0/rest-rant1REDO/issues"
   },
-  "homepage": "https://github.com/SPriyanka0/rest-rant1REDO#readme"
+  "homepage": "https://github.com/SPriyanka0/rest-rant1REDO#readme",
+  "dependencies": {
+    "nodemon": "^2.0.16"
+  }
 }
