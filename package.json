@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/SPriyanka0/rest-rant1REDO#readme",
   "dependencies": {
-    "nodemon": "^2.0.16"
+    "express-react-views": "^0.11.0",
+    "nodemon": "^2.0.16",
+    "react": "^18.1.0"
   }
 }
