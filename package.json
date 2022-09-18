@@ -19,7 +19,7 @@
   "homepage": "https://github.com/SPriyanka0/rest-rant1REDO#readme",
   "dependencies": {
     "express-react-views": "^0.11.0",
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.20",
     "react": "^18.1.0"
   }
 }
