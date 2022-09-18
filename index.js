@@ -10,7 +10,7 @@ app.use(express.static('public'))
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
-  res.send('home')
+  res.render('home')
 })
 
 app.get('*', (req, res) => {

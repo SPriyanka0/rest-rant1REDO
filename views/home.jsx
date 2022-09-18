@@ -1,5 +1,4 @@
 //import React and the Def function we created in the default.jsx
-module.exports = home
 
 const React = require('react')
 const Def = require('./default')
