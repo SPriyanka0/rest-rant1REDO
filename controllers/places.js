@@ -3,6 +3,10 @@ const router = require('express').Router()
 //(i.e., the GET route 
 //that will eventually show a list of all places).
 // GET /places
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
 router.get('/', (req, res) => {
   let places = [{
     name: 'H-Thai-ML',
