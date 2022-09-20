@@ -11,9 +11,9 @@ router.get('/new', (req, res) => {
 
 router.get('/', (req, res) => {
   router.post('/', (req, res) => {
-    console.log(req.body)
+    //console.log(req.body)  -- for testing 
     if (!req.body.pic) {
-      // Default image if one is not provided
+      // Default if fields left blank
       req.body.pic = 'http://placekitten.com/400/400'
     }
     if (!req.body.city) {
@@ -27,26 +27,6 @@ router.get('/', (req, res) => {
   }) 
   res.render('places/index', { places }) 
   })
-  
-  // let places = [{
-  //   name: 'H-Thai-ML',
-  //   city: 'Seattle',
-  //   state: 'WA',
-  //   cuisines: 'Thai, Pan-Asian',
-  //   pic: '/images/thai.png'
-  // }, {
-  //     name: 'Coding Cat Cafe',
-  //     city: 'Phoenix',
-  //     state: 'AZ',
-  //     cuisines: 'Coffee, Bakery',
-  //     pic: '/images/cat.jpg'
-  // }]
-  
-      
-      
-
-
-  
   
 
 module.exports = router
