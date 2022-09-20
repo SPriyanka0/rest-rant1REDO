@@ -2,10 +2,15 @@ const React = require('react')
 const Def = require('../default')
 
 function index(data) {
-  let placesFormatted = data.places.map((place) => {
+  let placesFormatted = data.places.map((place, index) => {
     return (
       <div classname='col-sm-6'>
-        <h2>{place.name}</h2>
+        <h2>
+          {/* makes each place to a link to href to rwach index */}
+          <a href = {`/places/ ${index} ` }>
+          {place.name}
+          </a>
+        </h2>
         <p classname="text-center">
           {place.cuisines}
         </p>

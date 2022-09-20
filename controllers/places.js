@@ -25,7 +25,22 @@ router.get('/', (req, res) => {
     places.push(req.body)
     res.redirect('/places')
   }) 
+
+  // render new show page
   res.render('places/index', { places }) 
+  })
+  router.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+      res.render('error404')
+    }
+    else if (!places[id]) {
+      res.render('error404')
+    }
+    else {
+      //passes data to vieww
+      res.render('places/show' , { place: places[id]})
+    }
   })
   
 
