@@ -17,7 +17,8 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
   res.render('error404')
 })
-
+//sending data to be received by our back-end code
+app.use(express.urlencoded({ extended: true }))
 
 //listen for connections
 app.listen(process.env.PORT)
