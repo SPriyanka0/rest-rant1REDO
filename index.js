@@ -1,10 +1,15 @@
 require('dotenv').config()
 const express = require('express')
+const methodOverride = require('method-override')
 const app = express()
 
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
+//sending data to be received by our back-end code
+app.use(express.urlencoded({ extended: true }))
+//an app.use() statement that specifies _method as the keyword to change methods when we need to
+app.use(methodOverride('_method'))
 
 //Routes
 
@@ -17,8 +22,6 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
   res.render('error404')
 })
-//sending data to be received by our back-end code
-app.use(express.urlencoded({ extended: true }))
 
 //listen for connections
 app.listen(process.env.PORT)
