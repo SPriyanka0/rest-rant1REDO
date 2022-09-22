@@ -11,27 +11,32 @@ function new_form() {
                 <h1>Add a New Place</h1>
                 {/* form data goes to the POST /places route */}
                 <form method="POST" action="/places">
-                    <div classname="form-group">
+                    <div className="form-group">
                         <label htmlFor="name">Place Name</label>
-                        <input classname="form-control" id="name" name="name" required />
+                        <input className="form-control" id="name" name="name" required />
                     </div>
-                    <div classname="form-group">
+                    <div className="form-group">
                         <label htmlFor="pic">Place Picture</label>
-                        <input classname="form-control" id="pic" name="pic" />
+                        <input className="form-control" id="pic" name="pic" />
                     </div>
-                    <div classname="form-group">
+                    <div className="form-group">
                         <label htmlFor="city">City</label>
-                        <input classname="form-control" id="city" name="city" />
+                        <input className="form-control" id="city" name="city" />
                     </div>
-                    <div classname="form-group">
+                    <div className="form-group">
                         <label htmlFor="state">State</label>
-                        <input classname="form-control" id="state" name="state" />
+                        <input className="form-control" id="state" name="state" />
                     </div>
-                    <div classname="form-group">
+                    <div className="form-group">
+                        <label for="founded">Founded Year</label>
+                        <input className="form-control" id="founded" name="founded" />
+                    </div>
+
+                    <div className="form-group">
                         <label htmlFor="cuisines">Cuisines</label>
-                        <input classname="form-control" id="cuisines" name="cuisines" required />
+                        <input className="form-control" id="cuisines" name="cuisines" required />
                     </div>
-                    <input classname="btn btn-primary" type="submit" value="Add Place" />
+                    <input className="btn btn-primary" type="submit" value="Add Place" />
                 </form>
 
 
