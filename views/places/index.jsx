@@ -7,7 +7,7 @@ function index(data) {
       <div classname='col-sm-6'>
         <h2>
           {/* makes each place to a link to href to rwach index */}
-          <a href = {`/places/ ${index} ` }>
+          <a href = {`/places/ ${place.id} ` }>
           {place.name}
           </a>
         </h2>
