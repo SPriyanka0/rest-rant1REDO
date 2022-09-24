@@ -1,3 +1,6 @@
+//require the dotenv package == to ensure
+//we can use the value of the MONGO_URI environment variable.
+require('dotenv').config()
 //useNewUrlParser and useUnifiedTopology are optional, but will remove some warning messages from your terminal
 //connecting to mongoose 
 const mongoose = require('mongoose')
