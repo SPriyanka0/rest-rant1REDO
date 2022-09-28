@@ -2,24 +2,34 @@ const router = require('express').Router()
 const db = require('../models')
 
 router.get('/', (req, res) => {
-    db.Place.find()
+  db.Place.find()
     .then((places) => {
       res.render('places/index', { places })
     })
     .catch(err => {
-      console.log(err) 
+      console.log(err)
       res.render('error404')
     })
 })
 router.post('/', (req, res) => {
   db.Place.create(req.body)
-  .then(() => {
+    .then(() => {
       res.redirect('/places')
-  })
-  .catch(err => {
-      console.log('err', err)
-      res.render('error404')
-  })
+    })
+    .catch(err => {
+      if (err && err.name == 'ValidationError') {
+        let message = 'Validation Error: '
+        for (var field in err.errors) {
+          message += `${field} was ${err.errors[field].value}. `
+          message += `${err.errors[field].message}`
+        }
+        console.log('Validation error message', message)
+        res.render('places/new', { message })
+      }
+      else {
+        res.render('error404')
+      }
+    })
 })
 
 router.get('/new', (req, res) => {
@@ -47,7 +57,7 @@ router.post('/:id/rant', (req, res) => {
 })
 
 router.delete('/:id/rant/:rantId', (req, res) => {
-    res.send('GET /places/:id/rant/:rantId stub')
+  res.send('GET /places/:id/rant/:rantId stub')
 })
 
 module.exports = router
@@ -80,8 +90,8 @@ module.exports = router
 // const router = require('express').Router()
 // //the places variable in the index route now refers to that global variable.
 // const places = require('../models/places.js')
-// //first route in places.js. We can use the index page 
-// //(i.e., the GET route 
+// //first route in places.js. We can use the index page
+// //(i.e., the GET route
 // //that will eventually show a list of all places).
 // // GET /places
 // router.get('/new', (req, res) => {
@@ -90,7 +100,7 @@ module.exports = router
 
 // router.get('/', (req, res) => {
 //   router.post('/', (req, res) => {
-//     //console.log(req.body)  -- for testing 
+//     //console.log(req.body)  -- for testing
 //     if (!req.body.pic) {
 //       // Default if fields left blank
 //       req.body.pic = 'http://placekitten.com/400/400'

@@ -1,9 +1,9 @@
 h1 {
     text-align: center;
-    color: cornflowerblue;
+    color: rgb(43, 25, 208);
   }
   nav {
-    background-color: cornflowerblue;
+    background-color: rgb(34, 44, 64);
     padding: 10px;
 }
 
@@ -27,12 +27,12 @@ nav a:hover {
     text-decoration: none;
 }
 body {
-  background-color: lightblue;
+  background-color: rgb(28, 65, 78);
   text-align: center;
 }
 
 main {
   margin-right: 20px;
   margin-left: 20px;
-  background-color: white;
+  background-color: rgb(251, 247, 252);
 }
