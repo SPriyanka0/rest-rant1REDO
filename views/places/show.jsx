@@ -2,7 +2,23 @@ const React = require('react')
 const Def = require('../default')
 //displays information of specific place wwith connected routes
 function show(data) {
-   
+   let comments = (
+    <h3 className="inactive">No comments yt!</h3>
+   )
+   if (data.place.comments.length) {
+    comments = data.place.comments.map(c => {
+      return (
+        <div className="border">
+          <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+          <h4>{c.content}</h4>
+          <h3>
+            <stong>- {c.author}</stong>
+          </h3>
+          <h4>Rating: {c.stars}</h4>
+        </div>
+      )
+    })
+  }
     return (
         <Def>
             <main>
@@ -17,7 +33,7 @@ function show(data) {
                 <h3>Rating</h3>
                 <p> not rated yet </p>
                 <h3>Comments</h3>
-                <p> no comment </p>
+                {comments}
                 {/* href allows us to acess data.id */}
                 <a href={`/places/${data.id}/edit`} className="btn btn-warning">
                     Edit
@@ -33,4 +49,5 @@ function show(data) {
 }
 
 module.exports = show
+
 
